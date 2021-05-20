@@ -1,0 +1,64 @@
+{
+  "name": "ayu-cms",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "egg": {
+    "declarations": true
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "egg": "^2.15.1",
+    "egg-jwt": "^3.1.7",
+    "egg-redis": "^2.4.0",
+    "egg-scripts": "^2.11.0",
+    "egg-sequelize": "^6.0.0",
+    "egg-socket.io": "^4.1.6",
+    "egg-swagger-doc": "^2.3.2",
+    "egg-validate": "^2.0.2",
+    "egg-view-nunjucks": "^2.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "koa-is-json": "^1.0.0",
+    "moment": "^2.29.1",
+    "mysql2": "^2.2.5",
+    "nodemailer": "^6.6.0",
+    "ws": "^7.4.5",
+    "zlib": "^1.0.5"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "egg-bin": "^4.11.0",
+    "egg-ci": "^1.11.0",
+    "egg-mock": "^3.21.0",
+    "egg-sequelize-auto": "^0.1.1",
+    "eslint": "^5.13.0",
+    "eslint-config-egg": "^7.1.0",
+    "sequelize-cli": "^6.2.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon --title=egg-server-ayu-cms --sticky",
+    "stop": "egg-scripts stop --title=egg-server-ayu-cms",
+    "dev": "egg-bin dev",
+    "dbinit": "egg-sequelize-auto -o ./app/model -h localhost -p 3306 -d ayu_cms -u root -x 123456",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "ci": {
+    "version": "10"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "xuanyu",
+  "license": "MIT"
+}
