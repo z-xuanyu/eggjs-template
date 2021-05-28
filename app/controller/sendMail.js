@@ -4,7 +4,7 @@
  * @email: 969718197@qq.com
  * @github: https://github.com/z-xuanyu
  * @Date: 2021-05-18 11:02:18
- * @LastEditTime: 2021-05-18 11:11:30
+ * @LastEditTime: 2021-05-25 10:06:58
  * @Description: Modify here please
  */
 'use strict';
@@ -30,7 +30,7 @@ class sendMailController extends Controller {
     const text = '测试';
     const subject = '测试邮件';
     // const text = '这是一封测试邮件';
-    const html = '<h2>测试一下::</h2><a class="elem-a" href="https://baidu.com"><span class="content-elem-span">测试链接</span></a>';
+    const html = '<h2>测试一下::</h2><a class="elem-a" href="https://www.zhouxuanyu.com"><span class="content-elem-span">博客</span></a>';
     const has_send = await this.service.sendMail.sendMail(email, subject, text, html);
     has_send ? ctx.returnBody(200, '发送成功', null, true) : ctx.returnBody(1001, '发送失败', null, true);
   }

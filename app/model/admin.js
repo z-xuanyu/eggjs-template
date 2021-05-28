@@ -1,7 +1,7 @@
 /*
  * @Author: xuanyu
  * @Date: 2021-04-29 16:21:51
- * @LastEditTime: 2021-05-13 15:44:34
+ * @LastEditTime: 2021-05-28 15:03:55
  * @LastEditors: xuanyu
  * @Description: 管理员模型定义
  * @FilePath: \ayu-cms\app\model\admin.js
@@ -52,6 +52,12 @@ module.exports = app => {
       comment: '性别（1 男性，2 女性，3 保密）',
     },
     is_delete: {
+      type: INTEGER,
+      defaultValue: 0,
+    },
+    avatar: STRING,
+    login_time: DATE,
+    login_count: {
       type: INTEGER,
       defaultValue: 0,
     },

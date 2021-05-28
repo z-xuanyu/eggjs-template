@@ -1,7 +1,7 @@
 /*
  * @Author: xuanyu
  * @Date: 2021-04-29 16:59:22
- * @LastEditTime: 2021-05-13 15:44:21
+ * @LastEditTime: 2021-05-28 12:12:22
  * @LastEditors: xuanyu
  * @Description: In User Settings Edit
  * @FilePath: \ayu-cms\database\migrations\20210429085922-init-admins.js

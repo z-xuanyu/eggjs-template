@@ -2,7 +2,7 @@
 /*
  * @Author: xuanyu
  * @Date: 2021-04-26 15:49:48
- * @LastEditTime: 2021-05-17 14:23:09
+ * @LastEditTime: 2021-05-21 16:01:32
  * @LastEditors: xuanyu
  * @Description: In User Settings Edit
  * @FilePath: \ayu-cms\app\service\admin.js
@@ -20,11 +20,17 @@ class AdminService extends Service {
    * @return {*} 返回：管理员列表数据
    */
 
-  async list({ pageNo = 0, pageSize = 10 }) {
+  async list({
+    pageNo = 0,
+    pageSize = 10,
+  }) {
     return this.ctx.model.Admin.findAndCountAll({
       offset: pageNo,
       limit: pageSize,
-      order: [[ 'created_at', 'desc' ], [ 'id', 'desc' ]],
+      order: [
+        [ 'created_at', 'desc' ],
+        [ 'id', 'desc' ],
+      ],
     });
   }
 
@@ -52,7 +58,11 @@ class AdminService extends Service {
     stream.pipe(writerStream);
     return `${origin}/public/${stream.filename}`;
   }
+
+  async updateAdmininfo() {
+    return 'ok';
+  }
 }
 
-module.exports = AdminService;
 
+module.exports = AdminService;

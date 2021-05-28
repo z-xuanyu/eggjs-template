@@ -1,7 +1,7 @@
 /*
  * @Author: xuanyu
  * @Date: 2021-04-21 09:53:20
- * @LastEditTime: 2021-05-18 10:34:15
+ * @LastEditTime: 2021-05-20 17:09:09
  * @LastEditors: xuanyu
  * @Description: 默认的配置文件
  */
@@ -20,10 +20,10 @@ module.exports = appInfo => {
    **/
   const config = exports = {};
 
-  // use for cookie sign key, should change to your own and keep security
+  // cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1618969896330_4675';
   /**
-   * egg-swagger-doc default config
+   * swagger文档默认配置
    * @member Config#swagger-doc
    * @property {String} dirScanner - 插件扫描的文档路径
    * @property {String} basePath - api前置路由
@@ -61,8 +61,9 @@ module.exports = appInfo => {
     secret: 'xuanyu',
     expiresIn: 60 * 60 * 2, // 2小时过期
   };
-  // add your middleware config here
+  // 中间件
   config.middleware = [ 'auth', 'errorHandler' ];
+  // 接口授权中间
   config.auth = {
     allowed: [ '/', '/admin/login', '/admin/register', '/swagger-ui.html', '/swagger-doc', '/swagger-doc.html', '/swagger-ui-bundle.js', '/swagger-ui-standalone-preset.js', '/favicon-16x16.png', '/favicon-32x32.png', '/swagger-ui.css' ],
   };
@@ -82,12 +83,14 @@ module.exports = appInfo => {
       enable: false,
     },
   };
+  // 页面渲染
   config.view = {
     defaultViewEngine: 'nunjucks',
     mapping: {
       '.html': 'nunjucks',
     },
   };
+  // redis 缓存服务器
   config.redis = {
     client: {
       port: 6379,
@@ -96,7 +99,7 @@ module.exports = appInfo => {
       db: 0,
     },
   };
-  // socket.io;
+  // socket.io插件;
   config.io = {
     init: {},
     namespace: {
@@ -109,6 +112,19 @@ module.exports = appInfo => {
       host: '127.0.0.1',
       port: 6379,
     },
+  };
+  /** 阿里大鱼短信验证码配置  **/
+  config.aliSMS = {
+    isopen: true, // 是否开启短信发送
+    expire: 60, // 短信验证码有效期
+    accessKeyId: '',
+    accessSecret: '',
+    regionId: '',
+    product: '',
+    version: '',
+    SignName: '',
+    TemplateCode: '',
+
   };
   // 配置上传文件白名单
   config.multipart = {

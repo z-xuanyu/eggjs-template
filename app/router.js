@@ -4,7 +4,7 @@
  * @email: 969718197@qq.com
  * @github: https://github.com/z-xuanyu
  * @Date: 2021-04-21 09:53:20
- * @LastEditTime: 2021-05-13 17:51:53
+ * @LastEditTime: 2021-05-25 15:14:13
  * @motto: Still water run deep
  * @Description: 路由管理
  * @FilePath: \ayu-cms\app\router.js
@@ -33,6 +33,12 @@ module.exports = app => {
    * 接口前缀：/api/v2/
    */
   router.resources('users', '/api/v2/users', controller.user);
+
+
+  /**
+   * 小程序接口
+   */
+  router.post('/wx/login', controller.account.wxLogin);
 
 
   // socket.io
